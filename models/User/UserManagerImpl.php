@@ -25,11 +25,11 @@ class UserManagerImpl implements UserManager
     }
 
     /**
-     * @param array $criteria
-     * @return User[]
+     * @param string $email
+     * @return User
      */
-    public function findBy($criteria)
+    public function findOneByEmail($email)
     {
-        return getEM()->findBy(User::class, $criteria);
+        return getEM()->findOneBy(User::class, ['email' => $email]);
     }
 }

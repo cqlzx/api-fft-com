@@ -18,8 +18,8 @@ interface UserManager
     public function find($id);
 
     /**
-     * @param array $criteria
-     * @return User[]
+     * @param string $email
+     * @return User
      */
-    public function findBy($criteria);
+    public function findOneByEmail($email);
 }
