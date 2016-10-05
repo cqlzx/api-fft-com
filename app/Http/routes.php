@@ -1,13 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: long
- * Date: 9/28/16
- * Time: 4:26 PM
- */
+$routeFile = false;
+if(isset($_SERVER['HTTP_HOST'])){
+    foreach(config("app.domains") as $key => $value){
+        if(in_array($_SERVER['HTTP_HOST'], $value)){
+            $routeFile = __DIR__ . "/Routes/$key.php";
+        }
+    }
+}
 
-$app->get('/', function () use ($app) {
-    return $app->version();
-});
-
-$app->get('/test', "ExampleController@test");
+$routeFile = $routeFile ?: __DIR__ . "/Routes/interval.php";
+require $routeFile;

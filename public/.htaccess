@@ -4,10 +4,16 @@
     </IfModule>
 
     RewriteEngine On
+    RewriteBase /api-fft-com/
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteRule ^(.*)/$ public/$1 [L]
     RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Authorization Headers
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
