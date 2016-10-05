@@ -17,13 +17,17 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
-        }
+            "App\\": "app/",
+            "Models\\": "models/",
+            "Contracts\\": "contracts/"
+        },
+        "files": [
+            "misc/helpers.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [
-            "tests/",
-            "database/"
+            "tests/"
         ]
     },
     "scripts": {

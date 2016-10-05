@@ -651,6 +651,7 @@ class Application extends Container
             'Illuminate\Support\Facades\Schema' => 'Schema',
             'Illuminate\Support\Facades\URL' => 'URL',
             'Illuminate\Support\Facades\Validator' => 'Validator',
+            'Illuminate\Support\Facades\Request' => 'Request'
         ];
 
         if (! static::$aliasesRegistered) {
