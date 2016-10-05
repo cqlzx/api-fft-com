@@ -24,7 +24,7 @@ $app = new Laravel\Lumen\Application(
 );
 
 $app->configure('app');
-$app->withFacades();
+//$app->withFacades();
 
 
 /*
