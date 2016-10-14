@@ -1,5 +1,5 @@
 <?php
-$app->get("/test", function(){
+$app->get("/long", function(){
    return 'long';
 });
 
