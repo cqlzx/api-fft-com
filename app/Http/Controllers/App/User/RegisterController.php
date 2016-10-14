@@ -15,6 +15,10 @@ use Models\User\UserImpl;
 
 class RegisterController
 {
+    public function test(){
+        return "Hello Yash";
+    }
+
     public function create(UserFactory $userFactory){
         $user = $userFactory->make();
 //        $user = new UserImpl();

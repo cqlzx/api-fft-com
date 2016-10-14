@@ -30,4 +30,6 @@ interface User
     public function setEmail($email);
 
     public function setPassword($password);
+
+    public function validate($password);
 }

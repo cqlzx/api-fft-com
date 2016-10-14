@@ -8,6 +8,7 @@
 
 namespace Models\User;
 
+use Contracts\User\Exceptions\WrongPasswordException;
 use Contracts\User\User;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -133,5 +134,17 @@ class UserImpl implements User
         $this->password = $password;
     }
 
-
- }
+    /**
+     * @param string $password
+     * @return bool
+     * @throws WrongPasswordException
+     */
+    public function validate($password)
+    {
+        if($password == $this->getPassword()){
+            return true;
+        }else{
+            throw new WrongPasswordException;
+        }
+    }
+}
