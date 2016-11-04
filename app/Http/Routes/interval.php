@@ -6,3 +6,7 @@ $app->get("/long", function(){
 $app->get("/", function(){
    return 'root';
 });
+
+$app->get("/baby", function(){
+   return "To my beloved baby : I love you!";
+});
