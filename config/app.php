@@ -13,7 +13,8 @@ return [
     'domains' => [
         'app' => [
             'api.fft.com',
-            'dev.api.fft.com:8888'
+            'dev.api.fft.com:8888',
+            'cqzxlong.me'
         ],
         'web' => [
 

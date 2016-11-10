@@ -1,8 +1,4 @@
 <?php
-$app->get("/long", function(){
-   return 'long';
-});
-
 $app->get("/", function(){
    return 'root';
 });
@@ -11,6 +7,4 @@ $app->get("/baby", function(){
    return "To my beloved baby : I love you!";
 });
 
-$app->get("/test", function(){
-   return "test hehe";
-});
+$app->get("/test/user", "App\\Http\\Controllers\\App\\TestController@testDatabase");
