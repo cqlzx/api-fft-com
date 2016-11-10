@@ -1,6 +1,6 @@
 <?php
 $app->get("/", function(){
-   return 'root';
+   return 'root interval';
 });
 
 $app->get("/baby", function(){
