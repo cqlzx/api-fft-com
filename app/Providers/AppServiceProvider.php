@@ -22,6 +22,13 @@ class AppServiceProvider extends ServiceProvider
         $this->bindContract('User\User', false);
         $this->bindContract('User\UserFactory');
         $this->bindContract('User\UserManager');
+
+        $this->bindContract('Recipe\Comment', false);
+        $this->bindContract('Recipe\CommentManager');
+        $this->bindContract('Recipe\CommentFactory');
+        $this->bindContract('Recipe\Like', false);
+        $this->bindContract('Recipe\LikeManager');
+        $this->bindContract('Recipe\LikeFactory');
     }
 
     protected function bindContract($contract, $singleton = true)

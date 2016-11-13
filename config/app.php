@@ -14,7 +14,8 @@ return [
         'app' => [
             'api.fft.com',
             'dev.api.fft.com:8888',
-            'cqzxlong.me'
+            'www.cqzxlong.me',
+            'dev.www.cqzxlong.me:8888'
         ],
         'web' => [
 

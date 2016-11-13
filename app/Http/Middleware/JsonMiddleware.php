@@ -11,13 +11,13 @@ namespace App\Http\Middleware;
 
 use App\Exceptions\JSONHandler;
 use Illuminate\Contracts\Debug\ExceptionHandler;
-use Laravel\Lumen\Routing\Closure;
+use Closure;
 
 class JSONMiddleware
 {
     /**
      * @param \Illuminate\Http\Request $request
-     * @param \Closure|Closure $next
+     * @param Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
