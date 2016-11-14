@@ -24,4 +24,12 @@ interface CommentManager
      * @return Comment[]
      */
     public function findPagedComments($rid, $offset = 0, $limit = 0);
+
+    /**
+     * @param int $rid
+     * @param int $lastCommentDate
+     * @param int $perPage
+     * @return Comment[]
+     */
+    public function findCommentsByLastCommentDate($rid, $lastCommentDate, $perPage);
 }
