@@ -18,7 +18,7 @@ class CommentController
 {
     public function getComments(CommentManager $commentManager, UserManager $userManager){
         $rid = \Request::input("rid");
-        $lastCommentDate = \Request::input("lastCommentDate", time());
+        $lastCommentDate = \Request::input("lastCommentTime", time());
         $perPage = 10;
 //        $page = \Request::input("page");
 //        $perPage = \Request::input("limit", 10);
