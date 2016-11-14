@@ -34,7 +34,8 @@ class CommentController
             return [
                 "user" => $user->getFirstname(),
                 "comment" => $comment->getComment(),
-                "date" => date("m/d/Y", $comment->getDate())
+                "date" => date("m/d/Y", $comment->getDate()),
+                "timestamp" => $comment->getDate()
             ];
         }, $comments);
 
