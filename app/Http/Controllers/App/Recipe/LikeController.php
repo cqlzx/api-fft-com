@@ -26,9 +26,9 @@ class LikeController
         $uid = \Request::input("uid");
         $like = $likeManager->findOneBy($rid, $uid);
         if($like == null){
-            return "Not liked";
+            return 0;
         }else{
-            return "Already liked";
+            return 1;
         }
     }
 
