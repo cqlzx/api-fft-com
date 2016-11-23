@@ -1,8 +1,7 @@
 <?php
-$app->get("/", function($app){
+$app->get("/", function(){
    return "root app";
 });
-
 $app->group(["namespace" => "App\\Http\\Controllers\\App", "middleware" => App\Http\Middleware\JSONMiddleware::class], function ($app) {
     $app->post("/app/user/login", "User\\LoginController@authenticate");
     $app->post("/app/user/register", "User\\RegisterController@create");
