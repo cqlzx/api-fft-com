@@ -17,7 +17,13 @@ class LoginController
         $email = \Request::input('email');
         $password = \Request::input('password');
         $user = $userManager->findOneByEmail($email);
-        return $user->validate($password);
+        if($user == null){
+            return 0;
+        }
+        if($user->validate($password)){
+            return $user->getId();
+        }
+        return 0;
     }
 
     /**
