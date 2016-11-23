@@ -6,6 +6,7 @@ $app->get("/", function($app){
 $app->group(["namespace" => "App\\Http\\Controllers\\App", "middleware" => App\Http\Middleware\JSONMiddleware::class], function ($app) {
     $app->post("/app/user/login", "User\\LoginController@authenticate");
     $app->post("/app/user/register", "User\\RegisterController@create");
+    $app->get("/app/user/profile", "User\\ProfileController@getProfile");
 
     $app->get("/app/recipe/comment", "Recipe\\CommentController@getComments");
     $app->post("/app/recipe/comment", "Recipe\\CommentController@postComment");
