@@ -17,13 +17,11 @@ class RegisterController
 {
     public function create(UserFactory $userFactory){
         $user = $userFactory->make();
-//        $user = new UserImpl();
         $user->setFirstname(\Request::input('firstname'));
         $user->setLastname(\Request::input('lastname'));
         $user->setEmail(\Request::input('email'));
         $user->setPassword(\Request::input('password'));
 
-        print_r($user->getEmail());
         getEM()->flush();
     }
 }
