@@ -31,28 +31,28 @@ class ProfileImpl implements Profile
      *
      * @ORM\Column(type="string")
      */
-    protected $country;
+    protected $country = '';
 
     /**
      * @var int
      *
      * @ORM\Column(type="integer")
      */
-    protected $preference;
+    protected $preference = 0;
 
     /**
      * @var string
      *
      * @ORM\Column(type="string")
      */
-    protected $status;
+    protected $status = '';
 
     /**
      * @var string
      *
      * @ORM\Column(type="string")
      */
-    protected $profilePicture;
+    protected $profilePicture = '';
 
     /**
      * @return int

@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\App\User;
 
 
+use Contracts\User\ProfileFactory;
 use Contracts\User\ProfileManager;
 use Contracts\User\UserManager;
 
@@ -32,5 +33,30 @@ class ProfileController
         }
 
         return $arr;
+    }
+
+    public function postProfile(UserManager $userManager, ProfileManager $profileManager, ProfileFactory $profileFactory){
+        $uid = \Request::input("uid");
+        $firstName = \Request::input("firstName");
+        $lastName = \Request::input("lastName");
+        $profilePicture = \Request::input("profilePicture");
+        $country = \Request::input("country");
+        $status = \Request::input("status");
+
+        $user = $userManager->find($uid);
+        $user->setFirstname($firstName);
+        $user->setLastname($lastName);
+
+        $userProfile = $profileManager->find($uid);
+        if($userProfile == null){
+            $userProfile = $profileFactory->make($uid);
+        }
+
+        $userProfile->setUid($uid);
+        $userProfile->setProfilePicture($profilePicture);
+        $userProfile->setCountry($country);
+        $userProfile->setStatus($status);
+
+        getEM()->flush();
     }
 }
