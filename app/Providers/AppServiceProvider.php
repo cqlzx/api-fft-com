@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
         $this->bindContract('User\UserManager');
         $this->bindContract('User\Profile', false);
         $this->bindContract('User\ProfileManager');
+        $this->bindContract('User\ProfileFactory');
 
         $this->bindContract('Recipe\Comment', false);
         $this->bindContract('Recipe\CommentManager');
